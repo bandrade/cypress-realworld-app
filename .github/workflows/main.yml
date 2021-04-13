@@ -65,7 +65,15 @@ jobs:
             ${{ runner.os }}-node_modules-build-
 
       - name: "UI Tests - Chrome"
-        run: yarn start:ci & npx wait-on http://localhost:3000
-
-      - name: "UI Tests - Chrome"
-        run: npx cypress run --spec "cypress/tests/api/api-transactions.spec.ts" --browser chrome
+        uses: cypress-io/github-action@v2
+        with:
+          # we have already installed all dependencies above
+          install: false
+          start: yarn start:ci
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
+          browser: chrome
+          record: false
+          parallel: true
+          group: "UI - Chrome"
+          spec: cypress/tests/ui/*
