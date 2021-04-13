@@ -141,7 +141,9 @@ jobs:
   ui-firefox-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container:
+      image: cypress/browsers:node12.18.3-chrome87-ff82
+      options: --user 1001
     needs: install
     strategy:
       fail-fast: false
@@ -159,7 +161,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v2
         with:
@@ -171,10 +172,12 @@ jobs:
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
 
-  ui-firefox-mobile-tests:
+  ui-firefox-tests-mobile:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container:
+      image: cypress/browsers:node12.18.3-chrome87-ff82
+      options: --user 1001
     needs: install
     strategy:
       fail-fast: false
@@ -192,7 +195,6 @@ jobs:
           key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
-
       - name: "UI Tests - Firefox - Mobile"
         uses: cypress-io/github-action@v2
         with:
