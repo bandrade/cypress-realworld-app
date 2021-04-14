@@ -63,7 +63,7 @@ jobs:
         - name: "UI Tests - Api"
           uses: cypress-io/github-action@v2
           with:            
-            build: npm run build
+            build: npm install
             start: yarn start:ci
             wait-on: "http://localhost:3000"
             wait-on-timeout: 120
