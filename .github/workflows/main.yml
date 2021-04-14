@@ -32,11 +32,5 @@ jobs:
         with:
           runTests: false
       # report machine parameters
-      - run: yarn install
-      - run: yarn cypress info
-      - run: node -p 'os.cpus()'
-      - run: yarn types
-      - run: yarn test:unit:ci
-      - run: yarn build:ci
-      - run: yarn start:ci & npx wait-on http://localhost:3000
-      - run: npx cypress run --spec cypress/tests/api/api-transactions.spec.ts --browser chrome
+      - run: npm install 
+      - run: npm test
