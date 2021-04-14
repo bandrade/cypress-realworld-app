@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import Promise from "bluebird";
 import { percyHealthCheck } from "@percy/cypress/task";
 import codeCoverageTask from "@cypress/code-coverage/task";
-import registerReportPortalPlugin from "@reportportal/agent-js-cypress/lib/plugin"
+const registerReportPortalPlugin = require('@reportportal/agent-js-cypress/lib/plugin');
 dotenv.config({ path: ".env.local" });
 dotenv.config();
 
