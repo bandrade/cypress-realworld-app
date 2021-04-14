@@ -11,6 +11,8 @@ dotenv.config();
 
 const awsConfig = require(path.join(__dirname, "../../aws-exports-es5.js"));
 
+const registerReportPortalPlugin = require('@reportportal/agent-js-cypress/lib/plugin');
+
 export default (on, config) => {
   config.env.defaultPassword = process.env.SEED_DEFAULT_USER_PASSWORD;
   config.env.paginationPageSize = process.env.PAGINATION_PAGE_SIZE;
@@ -66,7 +68,7 @@ export default (on, config) => {
       return queryDatabase(queryPayload, (data, attrs) => _.find(data.results, attrs));
     },
   });
-
+  registerReportPortalPlugin(on,config);
   codeCoverageTask(on, config);
   return config;
 };
