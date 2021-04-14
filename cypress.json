@@ -26,6 +26,7 @@
     "token": "a9360449-397e-4a1a-a2aa-ffacbcc4a0ef",
     "launch": "cloudconference_app",
     "project": "cloudconference"
-  }
+  },
+  "pluginsFile": "cypress/plugins/index.ts"
 
 }
