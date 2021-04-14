@@ -4561,7 +4561,7 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@reportportal/agent-js-cypress@^5.0.0":
+"@reportportal/agent-js-cypress@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@reportportal/agent-js-cypress/-/agent-js-cypress-5.0.1.tgz#6e832a5823afbda39cea3759d088b6b1997c5a54"
   integrity sha512-EENBaDrG2YQNokCll1+Tx3POi0yQYveVscvP5Hxu+E1XeQTQZHEUQUX7YRNJNKJeE3laJfoZM1bxM2y19k+L5Q==
