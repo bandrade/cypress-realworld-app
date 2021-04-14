@@ -48,4 +48,4 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           spec: cypress/tests/api/api-notifications.spec.ts
-          
+          install: true
