@@ -34,6 +34,7 @@ jobs:
       # report machine parameters
       - run: yarn cypress info
       - run: node -p 'os.cpus()'
+      - run: yarn install
       - run: yarn types
       - run: yarn test:unit:ci
       - run: yarn build:ci
