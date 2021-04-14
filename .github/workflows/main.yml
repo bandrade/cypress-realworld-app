@@ -60,7 +60,7 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-node_modules-build-
 
-        - name: "UI Tests - Api"
+        - name: "Tests - Api"
           uses: cypress-io/github-action@v2
           with:            
             build: npm install
@@ -69,6 +69,7 @@ jobs:
             wait-on-timeout: 120
             browser: chrome
             spec: cypress/tests/api/api-notifications.spec.ts
+            config: launch=api-notifications
 
   ui-chrome-tests:
     timeout-minutes: 15
@@ -101,6 +102,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
+          config: launch=ui-notifications-chrome
 
   ui-chrome-mobile-tests:
     timeout-minutes: 15
@@ -135,6 +137,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
+          config: launch=ui-notifications-chrome-mobile
 
   ui-firefox-tests:
     timeout-minutes: 15
@@ -169,6 +172,7 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
+          config: launch=ui-notifications-firefox
 
   ui-firefox-tests-mobile:
     timeout-minutes: 15
@@ -203,3 +207,4 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
+          config: launch=ui-notifications-firefox-mobile
