@@ -32,5 +32,6 @@ jobs:
         with:
           runTests: false
       # report machine parameters
-      - run: npm install 
-      - run: npm test
+      - run: npm install
+      - run: npm start:ci & npx wait-on http://localhost:3000
+      - run: npm test:api
