@@ -17,6 +17,13 @@
       "url": "http://localhost:3001/__coverage__"
     }
   },
-  "experimentalStudio": true
+  "experimentalStudio": true,
+  "reporter": "@reportportal/agent-js-cypress",
+  "reporterOptions": {
+    "endpoint": "https://reportportal-report-portal.apps.testcluster-101.qe.devcluster.openshift.com/api/v1",
+    "token": "a9360449-397e-4a1a-a2aa-ffacbcc4a0ef",
+    "launch": "cloudconference_app",
+    "project": "cloudconference"
+  }
 
 }
