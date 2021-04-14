@@ -52,4 +52,4 @@ jobs:
         - name: Cypress run
           uses: cypress-io/github-action@v2
           with:
-            build: npx cypress run --spec "cypress/tests/api/api-transactions.spec.ts" --browser chrome  
+            build: npx cypress run --spec \"cypress/tests/api/api-transactions.spec.ts\" --browser chrome  
