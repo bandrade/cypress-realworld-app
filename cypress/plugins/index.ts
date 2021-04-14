@@ -5,9 +5,10 @@ import dotenv from "dotenv";
 import Promise from "bluebird";
 import { percyHealthCheck } from "@percy/cypress/task";
 import codeCoverageTask from "@cypress/code-coverage/task";
-const registerReportPortalPlugin = require('@reportportal/agent-js-cypress/lib/plugin');
+import { registerReportPortalPlugin } from "@reportportal/agent-js-cypress/lib/plugin";
 dotenv.config({ path: ".env.local" });
 dotenv.config();
+
 
 const awsConfig = require(path.join(__dirname, "../../aws-exports-es5.js"));
 
