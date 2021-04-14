@@ -38,35 +38,14 @@ jobs:
       - run: yarn test:unit:ci
       - run: yarn build:ci
 
-  ui-api-tests:
-      timeout-minutes: 15
-      runs-on: ubuntu-latest
-      container: cypress/browsers:node12.18.3-chrome87-ff82
-      needs: install
-      strategy:
-        fail-fast: false
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
 
-        - uses: actions/cache@v2
-          id: yarn-and-build-cache
-          with:
-            path: |
-              ~/.cache/Cypress
-              build
-              node_modules
-            key: ${{ runner.os }}-node_modules-build-${{ hashFiles('**/yarn.lock') }}
-            restore-keys: |
-              ${{ runner.os }}-node_modules-build-
-
-        - name: "UI Tests - Api"
-          uses: cypress-io/github-action@v2
-          with:
-            # we have already installed all dependencies above
-            install: false
-            start: yarn start:ci
-            wait-on: "http://localhost:3000"
-            wait-on-timeout: 120
-            browser: chrome
-            spec: cypress/tests/api/api-notifications.spec.ts
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          spec: cypress/tests/api/api-notifications.spec.ts
+          
