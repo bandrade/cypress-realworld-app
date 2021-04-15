@@ -69,7 +69,7 @@ jobs:
             wait-on-timeout: 120
             browser: chrome
             spec: cypress/tests/api/api-notifications.spec.ts
-            config: launch=api-notifications
+            config-file: rp-cypress-api.json
 
   ui-chrome-tests:
     timeout-minutes: 15
