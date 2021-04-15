@@ -16,17 +16,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
      
-      - name: Cypress install
+      - name: Project install
         uses: cypress-io/github-action@v2
         with:
           build: npm install
           runTests: false
       # report machine parameters
-      - run: yarn cypress info
-      - run: node -p 'os.cpus()'
-      - run: yarn types
-      - run: yarn test:unit:ci
-      - run: yarn build:ci
+#      - run: yarn cypress info
+#      - run: node -p 'os.cpus()'
+#      - run: yarn types
+#      - run: yarn test:unit:ci
+#      - run: yarn build:ci
       - uses: actions/cache@v2
         id: yarn-and-build-cache
         with:
@@ -63,7 +63,7 @@ jobs:
         - name: "Tests - Api"
           uses: cypress-io/github-action@v2
           with:            
-            build: npm install
+            install: false
             start: yarn start:ci
             wait-on: "http://localhost:3000"
             wait-on-timeout: 120
@@ -96,6 +96,7 @@ jobs:
       - name: "UI Tests - Chrome"
         uses: cypress-io/github-action@v2
         with:
+          install: false
           build: npm install
           start: yarn start:ci
           wait-on: "http://localhost:3000"
@@ -130,7 +131,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           # we have already installed all dependencies above
-          build: npm install
+          install: false
           config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-chrome-mobile"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
@@ -164,8 +165,7 @@ jobs:
       - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v2
         with:
-          # we have already installed all dependencies above
-          build: npm install
+          install: false
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
@@ -199,6 +199,7 @@ jobs:
       - name: "UI Tests - Firefox - Mobile"
         uses: cypress-io/github-action@v2
         with:
+          install: false
           config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-firefox-mobile"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
