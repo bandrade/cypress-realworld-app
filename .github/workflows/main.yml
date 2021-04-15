@@ -63,6 +63,12 @@ jobs:
         - name: "Tests - Api"
           uses: cypress-io/github-action@v2
           with:            
+            #build: npm install
+            #start: yarn start:ci
+            #wait-on: "http://localhost:3000"
+            #wait-on-timeout: 120
+            #browser: chrome
+            #spec: cypress/tests/api/api-notifications.spec.ts
             config-file: rp-cypress-api.json
 
   ui-chrome-tests:
