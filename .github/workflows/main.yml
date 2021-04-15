@@ -217,7 +217,7 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
-          config-file: rp-cypress-firefox-mobile.json
+          config-file: cypress/test_runs/rp-cypress-firefox-mobile.json
       - name: Sleep for 20s
         uses: juliangruber/sleep-action@v1
         with:
