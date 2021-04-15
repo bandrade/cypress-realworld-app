@@ -6,5 +6,11 @@
     "launch": "cloudconference_api",
     "project": "cloudconference"
   },
+  "build" :"npm install",
+  "start": "yarn start:ci",
+  "wait-on": "http://localhost:3000",
+  "wait-on-timeout" : "120",
+  "browser" : "chrome",
+  "spec": "cypress/tests/api/api-notifications.spec.ts",
   "pluginsFile": "cypress/plugins/index.ts"
 }
