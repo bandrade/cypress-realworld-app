@@ -65,6 +65,10 @@ jobs:
             browser: chrome
             spec: cypress/tests/api/api-notifications.spec.ts
             config-file: rp-cypress-api.json
+        - name: Sleep for 20s
+          uses: juliangruber/sleep-action@v1
+          with:
+           time: 20s        
 
   ui-chrome-tests:
     timeout-minutes: 15
