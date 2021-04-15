@@ -61,7 +61,7 @@ jobs:
             wait-on-timeout: 120
             browser: chrome
             spec: cypress/tests/api/api-notifications.spec.ts
-            config-file: rp-cypress-api.json
+            config-file: cypress/test_run/rp-cypress-api.json
         - name: Sleep for 20s
           uses: juliangruber/sleep-action@v1
           with:
@@ -99,7 +99,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
-          config-file: rp-cypress-chrome.json
+          config-file: cypress/test_run/rp-cypress-chrome.json
       - name: Sleep for 20s
         uses: juliangruber/sleep-action@v1
         with:
@@ -138,7 +138,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
-          config-file: rp-cypress-chrome-mobile.json
+          config-file: cypress/test_run/rp-cypress-chrome-mobile.json
       - name: Sleep for 20s
         uses: juliangruber/sleep-action@v1
         with:
@@ -177,7 +177,7 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
-          config-file: rp-cypress-firefox.json
+          config-file: cypress/test_run/rp-cypress-firefox.json
       - name: Sleep for 20s
         uses: juliangruber/sleep-action@v1
         with:
