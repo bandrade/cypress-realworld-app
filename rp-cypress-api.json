@@ -25,7 +25,7 @@
     "endpoint": "https://reportportal-report-portal.apps.testcluster-987.qe.devcluster.openshift.com/api/v1",
     "token": "68d3d47e-7091-40de-8158-19a348e34026",
     "launch": "cloudconference_api",
-    "project": "cloudconference"
+    "project": "cloudconference_api"
   },
   "pluginsFile": "cypress/plugins/index.ts"
 
