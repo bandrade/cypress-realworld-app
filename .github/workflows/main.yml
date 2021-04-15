@@ -63,7 +63,7 @@ jobs:
             wait-on: "http://localhost:3000"
             wait-on-timeout: 120
             browser: chrome
-            spec: ../cypress/tests/api/api-notifications.spec.ts
+            spec: cypress/tests/api/api-notifications.spec.ts
             config-file: rp-cypress-api.json
           env:
             DEBUG: 'cypress:*'
