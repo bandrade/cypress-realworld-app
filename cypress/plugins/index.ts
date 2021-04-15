@@ -44,20 +44,6 @@ export default (on, config) => {
 
   const testDataApiEndpoint = `${config.env.apiUrl}/testData`;
 
-  const deepmerge = require('deepmerge')
-
-  function loadConfig(filename) {
-  const configJson = require(filename)
-  if (configJson.extends) {
-    const baseConfigFilename = path.join(
-      path.dirname(filename), configJson.extends)
-    const baseConfig = loadConfig(baseConfigFilename)
-    console.log('merging %s with %s', baseConfigFilename, filename)
-    return deepmerge(baseConfig, configJson)
-  } else {
-    return configJson
-  }
-}
   const queryDatabase = ({ entity, query }, callback) => {
     const fetchData = async (attrs) => {
       const { data } = await axios.get(`${testDataApiEndpoint}/${entity}`);
@@ -83,8 +69,7 @@ export default (on, config) => {
       return queryDatabase(queryPayload, (data, attrs) => _.find(data.results, attrs));
     },
   });
-  
   codeCoverageTask(on, config);
   registerReportPortalPlugin(on, config);
-   return loadConfig(config.configFile)
+  return config;
 };
