@@ -32,7 +32,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-build-
 
-  ui-api-tests:
+  api-tests:
       timeout-minutes: 15
       runs-on: ubuntu-latest
       container: cypress/browsers:node12.18.3-chrome87-ff82
@@ -65,8 +65,6 @@ jobs:
             browser: chrome
             spec: cypress/tests/api/api-notifications.spec.ts
             config-file: rp-cypress-api.json
-          env:
-            DEBUG: 'cypress:*'
 
   ui-chrome-tests:
     timeout-minutes: 15
@@ -100,7 +98,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
-          config: launch=ui-notifications-chrome
+          config-file: rp-cypress-chrome.json
 
   ui-chrome-mobile-tests:
     timeout-minutes: 15
@@ -135,6 +133,7 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
+          config-file: rp-cypress-chrome-mobile.json
 
   ui-firefox-tests:
     timeout-minutes: 15
@@ -170,6 +169,7 @@ jobs:
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
           config: launch=ui-notifications-firefox
+          config-file: rp-cypress-chrome-firefox.json
 
   ui-firefox-tests-mobile:
     timeout-minutes: 15
@@ -205,3 +205,4 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
+          config-file: rp-cypress-chrome-firefox-mobile.json

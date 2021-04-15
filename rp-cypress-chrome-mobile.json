@@ -1,0 +1,32 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "projectId": "7s5okt",
+  "integrationFolder": "cypress/tests",
+  "viewportHeight": 1000,
+  "viewportWidth": 1280,
+  "firefoxGcInterval": null,
+  "retries": {
+    "runMode": 2,
+    "openMode": 1
+  },
+  "env": {
+    "apiUrl": "http://localhost:3001",
+    "mobileViewportWidthBreakpoint": 414,
+    "coverage": false,
+    "codeCoverage": {
+      "url": "http://localhost:3001/__coverage__"
+    }
+  },
+  "experimentalStudio": true,
+  
+
+  "reporter": "@reportportal/agent-js-cypress",
+  "reporterOptions": {
+    "endpoint": "https://reportportal-report-portal.apps.testcluster-987.qe.devcluster.openshift.com/api/v1",
+    "token": "68d3d47e-7091-40de-8158-19a348e34026",
+    "launch": "cloudconference_chrome_mobile",
+    "project": "cloudconference_chrome_mobile"
+  },
+  "pluginsFile": "cypress/plugins/index.ts"
+
+}
