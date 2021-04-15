@@ -131,13 +131,12 @@ jobs:
         with:
           # we have already installed all dependencies above
           build: npm install
-          config: "viewportWidth=375,viewportHeight=667"
+          config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-chrome-mobile"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           browser: chrome
           spec: cypress/tests/ui/notifications.spec.ts
-          config: launch=ui-notifications-chrome-mobile
 
   ui-firefox-tests:
     timeout-minutes: 15
@@ -201,10 +200,9 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm install
-          config: "viewportWidth=375,viewportHeight=667"
+          config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-firefox-mobile"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
-          config: launch=ui-notifications-firefox-mobile
