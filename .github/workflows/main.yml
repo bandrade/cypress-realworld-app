@@ -127,7 +127,7 @@ jobs:
         with:
           build: npm install
           install: false
-          config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-chrome-mobile"
+          config: "viewportWidth=375,viewportHeight=667"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
@@ -168,8 +168,7 @@ jobs:
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
-          config: launch=ui-notifications-firefox
-          config-file: rp-cypress-chrome-firefox.json
+          config-file: rp-cypress-firefox.json
 
   ui-firefox-tests-mobile:
     timeout-minutes: 15
@@ -199,10 +198,10 @@ jobs:
         with:
           install: false
           build: npm install
-          config: "viewportWidth=375,viewportHeight=667,launch=ui-notifications-firefox-mobile"
+          config: "viewportWidth=375,viewportHeight=667"
           start: yarn start:ci
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           browser: firefox
           spec: cypress/tests/ui/notifications.spec.ts
-          config-file: rp-cypress-chrome-firefox-mobile.json
+          config-file: rp-cypress-firefox-mobile.json
