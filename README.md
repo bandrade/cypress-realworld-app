@@ -1,9 +1,17 @@
+### Cypress + Report Portal Demo
+
+Forked from this repository [cypress-io/cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app).
+
+This is a demo used to demonstrate an approach of including test automations in a Software Pipeline. With an increasing number of applications, it is assumed that there are also a lot of automated tests. How to manage the results and create issues in an efficient automated way? One possible solution is to use the Report Portal. This platform uses Elasticsearch, database, UI and Microservices to manage test automation reports, with Machine Learning for analysis and integration with Bug Trackers. A description of its main characteristics and its applicability will be presented through a demo. [Slides in pt-BR](https://speakerdeck.com/_bandrade/incluindo-os-testes-automatizados-no-seu-pipeline-de-forma-eficaz-atraves-do-report-portal)
 
 ### Prerequisites
+Have Report Portal [installed](https://reportportal.io/installation)
 
-The only requirement for this project is to have [Node.js](https://nodejs.org/en/) **version 14** installed on your machine. Refer to the [.node-version](./.node-version) file for the exact version.
+Other requirement of this project is to have [Node.js](https://nodejs.org/en/) **version 14** installed on your machine. Refer to the [.node-version](./.node-version) file for the exact version.
 
 TypeScript will be added as a local dependency to the project, so no need to install it.
+
+It's needed to change the Report portal url in [Cypress Config files](https://github.com/bandrade/report-portal-cloud-conference-day)
 
 ### Installation
 
@@ -47,11 +55,7 @@ yarn cypress:open
 
 | Script         | Description                                                                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dev            | Starts backend in watch mode and frontend                                                                                                                                         |
-| dev:auth0      | Starts backend in watch mode and frontend; [Uses Auth0 for Authentication](#auth0) > [Read Guide](http://on.cypress.io/auth0)                                                     |
-| dev:okta       | Starts backend in watch mode and frontend; [Uses Okta for Authentication](#okta) > [Read Guide](http://on.cypress.io/okta)                                                        |
-| dev:cognito    | Starts backend in watch mode and frontend; [Uses Cognito for Authentication](#amazon-cognito) > [Read Guide](http://on.cypress.io/amazon-cognito)                                 |
-| dev:google     | Starts backend in watch mode and frontend; [Uses Google for Authentication](#google) > [Read Guide](https://docs.cypress.io/guides/testing-strategies/google-authentication.html) |
+| dev            | Starts backend in watch mode and frontend                                                                                                                                         | |
 | start          | Starts backend and frontend                                                                                                                                                       |
 | types          | Validates types                                                                                                                                                                   |
 | db:seed        | Generates fresh database seeds for json files in /data                                                                                                                            |
@@ -70,49 +74,6 @@ To generate a code coverage report:
 1. Run `yarn cypress:run --env coverage=true` and wait for the test run to complete.
 2. Once the test run is complete, you can view the report at `coverage/index.html`.
 
-## 3rd Party Authentication Providers
-
-Support for 3rd party authentication is available in the application to demonstrate the concept and commands needed for programmatic login.
-
-### Auth0
-
-A [guide has been written with detail around adapting the RWA](http://on.cypress.io/auth0) to use [Auth0][auth0] and to explain the programmatic command used for Cypress tests.
-
-Prerequisites include an Auth0 account and a Tenant configured for use with a SPA. Environment variables from Auth0 are to be placed in the [.env](./.env).
-
-Start the application with `yarn dev:auth0` and run Cypress with `yarn cypress:open`.
-
-The only passing spec on this branch will be the [auth0 spec](./cypress/tests/ui-auth-providers/auth0.spec.ts); all others will fail.
-
-### Okta
-
-A [guide has been written with detail around adapting the RWA](http://on.cypress.io/okta) to use [Okta][okta] and to explain the programmatic command used for Cypress tests.
-
-Prerequisites include an [Okta][okta] account and [application configured for use with a SPA][oktacreateapp]. Environment variables from [Okta][okta] are to be placed in the [.env](./.env).
-
-Start the application with `yarn dev:okta` and run Cypress with `yarn cypress:open`.
-
-The **only passing spec on this branch** will be the [okta spec](./cypress/tests/ui-auth-providers/okta.spec.ts); all others will fail.
-
-### Amazon Cognito
-
-A [guide has been written with detail around adapting the RWA](http://on.cypress.io/amazon-cognito) to use [Amazon Cognito][cognito] as the authentication solution and to explain the programmatic command used for Cypress tests.
-
-Prerequisites include an [Amazon Cognito][cognito] account. Environment variables from [Amazon Cognito][cognito] are provided by the [AWS Amplify CLI][awsamplify].
-
-Start the application with `yarn dev:cognito` and run Cypress with `yarn cypress:open`.
-
-The **only passing spec on this branch** will be the [cognito spec](./cypress/tests/ui-auth-providers/cognito.spec.ts); all others will fail.
-
-### Google
-
-A [guide has been written with detail around adapting the RWA](https://docs.cypress.io/guides/testing-strategies/google-authentication.html) to use [Google][google] as the authentication solution and to explain the programmatic command used for Cypress tests.
-
-Prerequisites include an [Google][google] account. Environment variables from [Google][google] are to be placed in the [.env](./.env).
-
-Start the application with `yarn dev:google` and run Cypress with `yarn cypress:open`.
-
-The **only passing spec** when run with `yarn dev:google` will be the [google spec](./cypress/tests/ui-auth-providers/google.spec.ts); all others will fail.
 
 
 
