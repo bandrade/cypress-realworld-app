@@ -22,8 +22,8 @@
 
   "reporter": "@reportportal/agent-js-cypress",
   "reporterOptions": {
-    "endpoint": "https://reportportal-report-portal.apps.testcluster-853.qe.devcluster.openshift.com/api/v1",
-    "token": "aba3d54f-dc1d-42f8-a13f-949c2b61c662",
+    "endpoint": "https://reportportal-report-portal.apps.testcluster-593.qe.devcluster.openshift.com/api/v1",
+    "token": "ea6a2038-137f-45a6-82a6-3fa38b4059dc",
     "launch": "cloudconference_api",
     "project": "cloudconference_app"
   },
