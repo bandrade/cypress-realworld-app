@@ -4,6 +4,9 @@ Forked from this repository [cypress-io/cypress-realworld-app](https://github.co
 
 This is a demo used to demonstrate an approach of including test automations in a Software Pipeline. With an increasing number of applications, it is assumed that there are also a lot of automated tests. How to manage the results and create issues in an efficient automated way? One possible solution is to use the Report Portal. This platform uses Elasticsearch, database, UI and Microservices to manage test automation reports, with Machine Learning for analysis and integration with Bug Trackers. A description of its main characteristics and its applicability will be presented through a demo. [Slides in pt-BR](https://speakerdeck.com/_bandrade/incluindo-os-testes-automatizados-no-seu-pipeline-de-forma-eficaz-atraves-do-report-portal)
 
+![demo](images/demo.gif)
+
+
 ### Prerequisites
 
 - Have Report Portal [installed](https://reportportal.io/installation)
